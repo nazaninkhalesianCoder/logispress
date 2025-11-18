@@ -1,4 +1,4 @@
-import { HomeSvg, mooshak, vector } from "../utils/import";
+import { HomeSvg, content, mooshak, vector } from "../utils/import";
 
 import AboutUs from "./AboutUs";
 import Btn from "./Btn";
@@ -8,42 +8,70 @@ const HomeMainComponnent = () => {
   return (
     <div className="flex flex-col">
       {/* ==== بخش اول با پدینگ ===== */}
-      <div className="px-20">
-        <div className="flex justify-between mb-40">
-          <div className="flex flex-col gap-5">
+      <div className="md:px-20 px-5">
+        <div className="flex flex-col md:flex-row justify-between mb-40 w-full overflow-hidden">
+          {/* متن‌ها */}
+          <div className="flex flex-col gap-5 text-left w-full overflow-hidden">
             {/* big text */}
-            <span className="text-[64px] mt-20 font-extrabold h-fit">
+            <span className="md:text-[64px] text-[32px] mt-10 md:mt-20 font-extrabold leading-tight">
               {/* first text with icon */}
-              <span className="flex gap-5 items-center relative">
+              <span className="flex gap-3 items-center relative w-full">
                 <span>LA LOGISTICA</span>
-                <img className="absolute left-[535px]" src={mooshak} alt="" />
+
+                {/* desktop icon */}
+                <img
+                  className="hidden md:block absolute left-[535px]"
+                  src={mooshak}
+                  alt=""
+                />
+
+                {/* mobile icon */}
+                <img
+                  className="block md:hidden w-10 relative left-0"
+                  src={mooshak}
+                  alt=""
+                />
               </span>
 
               {/* simple text */}
-              <span>IDEALE PER IL TUO</span>
+              <span className="block">IDEALE PER IL TUO</span>
 
               {/* sec text with icon */}
-              <span className="flex gap-5 items-center mt-[-3px]">
-                <img src={vector} alt="" />
+              <span className="flex gap-3 items-center mt-0">
+                <img className="w-8 md:w-auto" src={vector} alt="" />
                 <span>ECOMMERCE</span>
               </span>
             </span>
 
+            {/* توضیحات */}
             <div className="flex flex-col gap-2">
-              <span className="text-[20px] w-[90%]">
+              <span className="md:text-[20px] text-[16px] w-full md:w-[90%]">
                 Scopri I servizi di Warehousing e Fullfilment Automatizzati
                 offerti dalla nostra azienda per il tuo e-commerce.
               </span>
-              <span className="text-[20px] w-[85%]">
+              <span className="text-[16px] md:text-[20px] w-full md:w-[85%]">
                 Semplice, Intuitivo e una vasta gamma di prodotti, la nostra
                 piattaforma è quello che fa per te!
               </span>
             </div>
 
+            {/* دکمه */}
             <Btn title="Registrati" />
+
+            {/* عکس موبایل */}
+            <img
+              src={content}
+              className="block md:hidden w-full mt-10"
+              alt=""
+            />
           </div>
 
-          <img src={HomeSvg} alt="" />
+          {/* عکس دسکتاپ */}
+          <img
+            src={HomeSvg}
+            className="hidden md:block w-auto mt-10 md:mt-0"
+            alt=""
+          />
         </div>
       </div>
 
