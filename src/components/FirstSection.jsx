@@ -17,7 +17,7 @@ const FirstSection = () => {
 
               {/* desktop icon */}
               <img
-                className="hidden md:block absolute left-[535px]"
+                className="hidden md:block absolute left-[455px]"
                 src={mooshak}
                 alt=""
               />
