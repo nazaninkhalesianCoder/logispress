@@ -3,7 +3,8 @@ import React from "react";
 const AboutUs = () => {
   return (
     <div className="relative w-full bg-[#0B1F2A] text-[#F6F6F6] flex flex-col items-center">
-      {/* ❌ خط عمودی سراسری (lineA) حذف شد */}
+      {/* خط عمودی فقط در موبایل */}
+      <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-0.5 bg-[#B6D3E1] z-0 md:hidden"></div>
 
       <div className="w-full py-10 px-2 sm:px-10 md:px-20">
         {/* Mobile Layout */}
@@ -48,7 +49,6 @@ const AboutUs = () => {
             <span className="w-[50%]">Campagne di Successo</span>
           </div>
 
-          {/* خط جداکننده آیتم‌ها */}
           <div className="w-0.5 h-10 bg-[#B6D3E1]"></div>
 
           <div className="flex gap-3 items-center justify-center">

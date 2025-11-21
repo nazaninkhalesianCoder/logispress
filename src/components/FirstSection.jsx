@@ -1,4 +1,4 @@
-import { HomeSvg, content, mooshak, vector } from "../utils/import";
+import { HomeSvg, HomeSvgMobile, mooshak, vector } from "../utils/import";
 
 import Btn from "./Btn";
 import React from "react";
@@ -56,13 +56,13 @@ const FirstSection = () => {
           <Btn title="Registrati" />
 
           {/* عکس موبایل */}
-          <img src={content} className="block md:hidden w-full mt-10" alt="" />
+          <img src={HomeSvgMobile} className="block md:hidden  mt-10" alt="" />
         </div>
 
         {/* عکس دسکتاپ */}
         <img
           src={HomeSvg}
-          className="hidden md:block w-auto mt-10 md:mt-0"
+          className="hidden md:block w-[45%] max-w-[550px] object-contain mt-10 md:mt-0"
           alt=""
         />
       </div>
