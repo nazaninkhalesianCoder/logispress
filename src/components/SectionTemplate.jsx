@@ -8,6 +8,7 @@ const SectionTemplate = ({
   description2,
   icon,
   index,
+  type,
 }) => {
   return (
     <div
@@ -18,7 +19,16 @@ const SectionTemplate = ({
         items-center md:items-start
         justify-center md:justify-between
         md:px-10 px-4
-        ${index % 2 !== 0 ? "md:flex-row-reverse" : ""}
+        ${
+          type === "first" ? (index % 2 !== 0 ? "md:flex-row-reverse" : "") : "" // برای first
+        }
+        ${
+          type === "second"
+            ? index % 2 === 1
+              ? ""
+              : "md:flex-row-reverse"
+            : ""
+        }
       `}
     >
       {/* Mobile Image */}

@@ -1,4 +1,14 @@
-import { cupMobile, giftMobile, medalMobile } from "../utils/import";
+import {
+  boxDesktop,
+  cupDesktop,
+  cupMobile,
+  giftDesktop,
+  giftMobile,
+  lampDesktop,
+  medalDesktop,
+  medalMobile,
+  ratingDesktop,
+} from "../utils/import";
 
 import Btn from "./Btn";
 import React from "react";
@@ -20,10 +30,40 @@ const MiddleSection = () => {
         src={giftMobile}
         alt=""
       />
+      <img
+        className="hidden md:block md:absolute top-1 left-48"
+        src={giftDesktop}
+        alt=""
+      />
+      <img
+        className="hidden md:block md:absolute top-22 left-100"
+        src={lampDesktop}
+        alt=""
+      />
+      <img
+        className="hidden md:block md:absolute top-26 right-82"
+        src={medalDesktop}
+        alt=""
+      />
+      <img
+        className="hidden md:block md:absolute top-8 right-40"
+        src={boxDesktop}
+        alt=""
+      />
+      <img
+        className="hidden md:block md:absolute top-52 right-2"
+        src={ratingDesktop}
+        alt=""
+      />
 
       <img
         className="absolute md:hidden top-44 left-5"
         src={cupMobile}
+        alt=""
+      />
+      <img
+        className="hidden md:block md:absolute top-40 left-5"
+        src={cupDesktop}
         alt=""
       />
 
