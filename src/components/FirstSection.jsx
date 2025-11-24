@@ -5,19 +5,19 @@ import React from "react";
 
 const FirstSection = () => {
   return (
-    <div className="md:px-20 px-5">
-      <div className="flex flex-col md:flex-row justify-between  w-full overflow-hidden">
+    <div className="md:px-20 px-5 overflow-x-hidden">
+      <div className="flex flex-col md:flex-row justify-between w-full overflow-x-hidden">
         {/* متن‌ها */}
-        <div className="flex flex-col gap-5 text-left w-full overflow-hidden">
+        <div className="flex flex-col gap-5 text-left w-full overflow-x-hidden relative">
           {/* big text */}
           <span className="md:text-[64px] text-[32px] mt-10 md:mt-20 font-extrabold leading-tight">
             {/* first text with icon */}
             <span className="flex gap-3 items-center relative w-full">
               <span>LA LOGISTICA</span>
 
-              {/* desktop icon */}
+              {/* desktop icon FIXED */}
               <img
-                className="hidden md:block absolute left-[455px]"
+                className="hidden md:block absolute right-[190px] -translate-x-1/2"
                 src={mooshak}
                 alt=""
               />
@@ -56,7 +56,7 @@ const FirstSection = () => {
           <Btn title="Registrati" />
 
           {/* عکس موبایل */}
-          <img src={HomeSvgMobile} className="block md:hidden  mt-10" alt="" />
+          <img src={HomeSvgMobile} className="block md:hidden mt-10" alt="" />
         </div>
 
         {/* عکس دسکتاپ */}

@@ -7,6 +7,8 @@ import {
   desktopImage2,
   desktopImage3,
   desktopImage4,
+  desktopImage5,
+  group,
   hand,
   hands,
   mobileImage,
@@ -14,13 +16,16 @@ import {
   mobileImage2,
   mobileImage3,
   mobileImage4,
+  mobileImage5,
   todo,
 } from "../utils/import";
 
 import AboutUs from "./AboutUs";
 import BigMiddleSection from "./BigMiddleSection";
 import Btn from "./Btn";
+import FAQ from "./FAQ";
 import FirstSection from "./FirstSection";
+import Footer from "./Footer";
 import MiddleSection from "./MiddleSection";
 import React from "react";
 import SectionTemplate from "./SectionTemplate";
@@ -71,6 +76,15 @@ Affidati al nostro sistema di monitoraggio performance all'avanguardia. Ogni pas
       description1: "Supporto quando vuoi, dove vuoi!",
       description2: `Il nostro team di assistenza dedicata è qui per te. Hai domande, dubbi o necessiti di supporto? Contattaci senza esitazioni. Siamo pronti ad assisterti in ogni fase, garantendo un'esperienza di servizio clienti eccellente e personalizzata. Siamo qui per rendere il tuo percorso con noi facile e senza preoccupazioni.`,
     },
+    {
+      mobileImage: mobileImage5,
+      desktopImage: desktopImage5,
+      icon: group,
+      title: `integralo facilmente con i 
+tuoi marketplace preferiti!`,
+      description1: "Lorem ipsum",
+      description2: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh mauris, nec turpis orci lectus maecenas. Suspendisse sed magna eget nibh in turpis. Consequat duis diam lacus arcu. Faucibus venenatis felis id augue sit cursus pellentesque enim `,
+    },
   ];
   return (
     <div className="flex flex-col gap-14">
@@ -90,7 +104,25 @@ Affidati al nostro sistema di monitoraggio performance all'avanguardia. Ogni pas
         />
       ))}
       <MiddleSection />
-      {SectionData.filter((_, index) => index > 2).map((item, index) => (
+      {SectionData.filter((_, index) => index > 2 && index <= 4).map(
+        (item, index) => (
+          <SectionTemplate
+            key={index}
+            index={index}
+            type="second"
+            mobileImage={item.mobileImage}
+            desktopImage={item.desktopImage}
+            icon={item.icon}
+            title={item.title}
+            description1={item.description1}
+            description2={item.description2}
+          />
+        )
+      )}
+      <div className="w-full overflow-x-hidden">
+        <BigMiddleSection />
+      </div>
+      {SectionData.filter((_, index) => index > 4).map((item, index) => (
         <SectionTemplate
           key={index}
           index={index}
@@ -103,7 +135,10 @@ Affidati al nostro sistema di monitoraggio performance all'avanguardia. Ogni pas
           description2={item.description2}
         />
       ))}
-      <BigMiddleSection />
+      <div className="flex flex-col">
+        <FAQ />
+        <Footer />
+      </div>
     </div>
   );
 };
